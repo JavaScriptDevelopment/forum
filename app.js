@@ -13,9 +13,15 @@ const auth = require('./routes/auth');
 //load keys
 const keys = require('./config/keys');
 
+//map global promises
+mongoose.Promise = global.Promise;
 
 //Mongoose connect
-mongoose.connect()
+mongoose.connect(keys.mongoURI, {
+    useMongoClient:true  
+})
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err));
 
 
 const app = express();
