@@ -10,6 +10,9 @@ require('./config/passport')(passport);
 //Load Routes
 const auth = require('./routes/auth');
 
+//load keys
+const keys = require('./config/keys');
+
 
 //Mongoose connect
 mongoose.connect()
