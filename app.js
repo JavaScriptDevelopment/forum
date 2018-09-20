@@ -10,6 +10,11 @@ require('./config/passport')(passport);
 //Load Routes
 const auth = require('./routes/auth');
 
+
+//Mongoose connect
+mongoose.connect()
+
+
 const app = express();
 
 app.get('/', (req, res) => {
